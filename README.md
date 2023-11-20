@@ -1,5 +1,3 @@
-# LAB-Stackoverflow
-Proyecto de laboratorio sobre stackoverflow
 ## Fundamentos de Programación
 # Ejercicio de laboratorio: Stackoverflow
 ### Autor: José A. Troyano
@@ -48,7 +46,10 @@ Figura 1             |
 Para almacenar estos datos en memoria, utilizaremos una tupla con nombre con la siguiente definición:
 
 ```
-Pregunta = namedtuple('Pregunta', 'puntuacion, titulo, anyo, etiqueta')
+Pregunta = NamedTuple('Pregunta', [('puntuacion', int), 
+                                   ('titulo',str), 
+                                   ('anyo',int),
+                                   ('etiqueta', str)])
 ```
 
 
@@ -72,8 +73,12 @@ Para explotar los datos de `stackoverflow`  Cada  operación  se implementará e
     dadas una lista con etiquetas y una lista de números enteros que 
     representa la frecuencia con la que aparecen esas etiquetas, dibuja una gráfica de tartas con un sector por cada una de las etiquetas. Esta función debe añadirse al módulo `graficas`.
 
-    Use las siguientes instrucciones para generar la gráfica:
+    
+    Use las siguientes instrucciones para generar la gráfica, para lo que debe importar pyplot de la siguiente forma:
+    ```python
+    from matplotlib import pyploy as plt
     ```
+    ```python
         plt.pie(frecuencias, labels=etiquetas, autopct='%1.1f%%', shadow=True, startangle=90)
         plt.legend()
         plt.show()
